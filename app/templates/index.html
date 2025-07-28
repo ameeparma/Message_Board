@@ -1,0 +1,24 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YakBoard – Anonymous Message Board</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>YakBoard</h1>
+        <form id="postForm">
+            <textarea id="message" maxlength="280" placeholder="What's on your mind?" required></textarea>
+            <button type="submit">Post Anonymously</button>
+        </form>
+        <ul id="feed"></ul>
+    </div>
+    <div class="sort-controls">
+        <button id="sortTime">Sort by Time</button>
+        <button id="sortVotes">Sort by Votes</button>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
