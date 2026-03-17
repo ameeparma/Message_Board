@@ -11,4 +11,8 @@ def create_app():
     db.init_app(app)
     app.register_blueprint(routes_bp)
 
+    # Create tables automatically for fresh environments (e.g., new Docker containers).
+    with app.app_context():
+        db.create_all()
+
     return app
